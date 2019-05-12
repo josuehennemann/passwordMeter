@@ -38,6 +38,18 @@ func SetMinPwd(l int) {
 	nMinPwdLen = l
 }
 
+var nMinScore = 80
+
+//alter min score
+func SetMinScore(l int) {
+	nMinScore = l
+}
+
+//check password is strong
+func PasswordIsStrong(pwd string) bool {
+	return Score(pwd) >= nMinScore
+}
+
 //calc password score
 func Score(pwd string) int {
 	var nScore int
